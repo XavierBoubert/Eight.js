@@ -5,9 +5,27 @@
 	<script>
 		StructJS.Namespace.define('Users', {
 
-			user: function(name) {
+			user: StructJS.Class.define(function(name) {
+				this.name(name);
+			}, {
+				_name: '',
+				getName: function() {
+					return this._name;
+				},
 
-			}
+				name: new StructJS.Property(
+					function get(self) {
+						return self._name;
+					},
+					function set(self, value) {
+						self._name = value;
+					}
+				)
+			}, {
+				formatName: function(name) {
+					return name.toUpperCase();
+				}
+			})
 
 		});
 
@@ -27,15 +45,77 @@
 
 		});
 
+		Users.userAge = StructJS.Class.inherit(Users.user, function(name, age) {
+			Users.user.apply(this, [name]);
+
+			this._age = age;
+		}, {
+			_age: '',
+			getAge: function() {
+				return this._age;
+			}
+		});
 
 
 		var xavier = new Users.user('Xavier');
+		console.log(Users.user.formatName(xavier.name()));
+		xavier.name('Xavier Boubert');
+		console.log(xavier.name());
+
+		var xavier26 = new Users.userAge('Xavier', 26);
+		console.log(Users.user.formatName(xavier26.getName()) + ' ' + xavier26.getAge());
+
 		var admin = new Users.Groups.group('Admin');
 		var search = new Users.Groups.Search.query('Admin');
 
+		function add(a, b) {
+			return new StructJS.Promise(function(complete, error, progress) {
+				progress('Start');
+
+				var sum = a + b;
+
+				complete(sum);
+			});
+		}
+
+		console.log('Before Promise');
+		add(1, 2).then(
+			function complete(result) {
+				console.log('Promise complete: ' + result);
+			},
+			function error(error) {
+				console.log('Promise error:' + error);
+			},
+			function progress(result) {
+				console.log('Promise progress:' + result);
+			}
+		);
+		console.log('After Promise');
+
+
+		var users = [
+			{name: 'Xavier'},
+			{name: 'Guillaume'},
+			{name: 'Sandra'},
+			{name: 'Michael'}
+		]
+
+		StructJS.Utilities.DOMReady(function() {
+			document.getElementById('users').innerHTML = StructJS.Template.template_example_user(users);
+		})
+
+	</script>
+
+	<script id="template_example_user" type="text/html">
+		<li>
+			{{ name }}
+		</li>
 	</script>
 </head>
 <body>
 
+	<ul id="users">
+
+	</ul>
 </body>
 </html>

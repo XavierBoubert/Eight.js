@@ -10,6 +10,27 @@
 		return false;
 	}
 
+	function trim (value) {
+		if (''.trim)
+			return value.trim();
+
+		return value.replace(/^\s+/, '').replace(/\s+$/, '');
+	}
+
+	function DOMReady(callback) {
+		if (document.addEventListener) {
+			document.addEventListener('DOMContentLoaded', callback, false);
+		}
+		/* Safari, iCab, Konqueror */
+		if (/KHTML|WebKit|iCab/i.test(navigator.userAgent)) {
+			var DOMLoadTimer = setInterval(function () {
+				if (/loaded|complete/i.test(document.readyState)) {
+					callback();
+					clearInterval(DOMLoadTimer);
+				}
+			}, 10);
+		}
+	}
 
 	var namespaceDefine = function(name, objects, parentNamespace) {
 		if(isEmpty(parentNamespace)) {
@@ -47,10 +68,38 @@
 		return parentNamespace;
 	};
 
+	function classDefine(init, publicObjects, staticObjects, proto) {
+		var
+			classObj = init,
+			item;
+
+		if(!isEmpty(proto)) {
+			for(item in proto) {
+				classObj[item] = proto[item];
+			}
+			for(item in proto.prototype) {
+				classObj.prototype[item] = proto.prototype[item];
+			}
+		}
+
+		for(item in publicObjects) {
+			classObj.prototype[item] = publicObjects[item];
+		}
+		for(item in staticObjects) {
+			classObj[item] = staticObjects[item];
+		}
+
+		return classObj;
+	}
+
 	var StructJS = function() {
 
+		var that = this;
+
 		this.Utilities = {
-			isEmpty: isEmpty
+			isEmpty: isEmpty,
+			trim: trim,
+			DOMReady: DOMReady
 		};
 
 		this.Namespace = {
@@ -66,22 +115,117 @@
 		this.Class = {
 
 			define: function(init, publicObjects, staticObjects) {
+				return classDefine(init, publicObjects, staticObjects);
+			},
 
+			mix: function(objHost, properties) {
+				for (var key in properties) {
+					objHost[key] = properties[key];
+				}
+
+				return objHost;
+			},
+
+			clone: function (obj){
+				return this.mix({}, obj);
+			},
+
+			inherit: function (proto, init, publicObjects, staticObjects) {
+				return classDefine(init, publicObjects, staticObjects, proto);
 			}
-
-			// Properties
 		};
 
-		this.Promise = {
+		this.Property = function(get, set) {
+			return function(value) {
+				if(isEmpty(value)) {
+					if(!isEmpty(get))
+						return get(this);
+				}
+				else {
+					if(!isEmpty(set))
+						return set(this, value);
+				}
+			};
+		};
 
+		this.Promise = function(job) {
+			var
+				c = function() {},
+				e = function() {},
+				p = function() {};
+
+			var promise = {
+				then: function(complete, error, progress) {
+					c = complete || function() { };
+					e = error || function() { };
+					p = progress || function() { };
+				}
+			};
+
+			setTimeout(function() {
+				job(c, e, p);
+			}, 1);
+
+			return promise;
 		};
 
 		this.Template = {
+			templates: {},
 
+			addTemplate: function(name, templateString) {
+				that.Template.templates[name] = templateString;
+				that.Template[name] = function (replaces, increment) {
+					replaces = replaces || {};
+					increment = increment || 0;
+
+					var text = that.Template.templates[name], finalText = '', item;
+
+					if(typeof replaces == 'object' && (replaces instanceof Array)) {
+						for(var i = 0; i < replaces.length; i++) {
+							finalText += that.Template[name](replaces[i], i);
+						}
+					}
+					else {
+						replaces['%INCREMENT%'] = increment;
+
+						finalText = text;
+						for(item in replaces) {
+							finalText = finalText.replace(new RegExp('({{ '+item+' }})', 'g'), replaces[item]);
+						}
+					}
+
+					return finalText;
+				};
+			},
+
+			grabTemplates: function() {
+				var
+					i,
+					l,
+					scripts = document.getElementsByTagName('script'),
+					trash = [];
+
+				for (i = 0, l = scripts.length; i < l; i++) {
+					var script = scripts[i];
+					if (script && script.innerHTML && script.id && script.type === "text/html") {
+						that.Template.addTemplate(script.id, trim(script.innerHTML));
+						trash.unshift(script);
+					}
+				}
+				for (i = 0, l = trash.length; i < l; i++) {
+					trash[i].parentNode.removeChild(trash[i]);
+				}
+			}
 		};
 
 	};
 
-	window.StructJS = new StructJS();
+	var structJS = new StructJS();
+
+	structJS.Utilities.DOMReady(function() {
+		structJS.Template.grabTemplates();
+	});
+
+	window.StructJS = structJS;
 
 })(window);
