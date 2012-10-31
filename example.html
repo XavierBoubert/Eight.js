@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<script type="text/javascript" src="StructJS.js"></script>
+	<script>
+		StructJS.Namespace.define('Users', {
+
+			user: function(name) {
+
+			}
+
+		});
+
+		StructJS.Namespace.define('Users.Groups', {
+
+			group: function(name) {
+
+			}
+
+		});
+
+		StructJS.Namespace.defineInParent('Users.Groups', 'Search', {
+
+			query: function(query) {
+
+			}
+
+		});
+
+
+
+		var xavier = new Users.user('Xavier');
+		var admin = new Users.Groups.group('Admin');
+		var search = new Users.Groups.Search.query('Admin');
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
