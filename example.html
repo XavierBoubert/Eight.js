@@ -79,19 +79,30 @@
 		}
 
 		console.log('Before Promise');
-		add(1, 2).then(
-			function complete(result) {
-				console.log('Promise complete: ' + result);
-			},
-			function error(error) {
-				console.log('Promise error:' + error);
-			},
-			function progress(result) {
-				console.log('Promise progress:' + result);
-			}
-		);
+		add(1, 2)
+			.then(
+				function complete(result) {
+					console.log('Promise complete: ' + result);
+				},
+				function error(error) {
+					console.log('Promise error:' + error);
+				},
+				function progress(result) {
+					console.log('Promise progress:' + result);
+				}
+			)
+			.then(
+				function complete(result) {
+					console.log('Promise complete 2: ' + result);
+				},
+				function error(error) {
+					console.log('Promise error 2:' + error);
+				},
+				function progress(result) {
+					console.log('Promise progress 2:' + result);
+				}
+			);
 		console.log('After Promise');
-
 
 		var users = [
 			{name: 'Xavier'},
@@ -101,14 +112,31 @@
 		]
 
 		StructJS.Utilities.DOMReady(function() {
-			document.getElementById('users').innerHTML = StructJS.Template.template_example_user(users);
+			document.getElementById('users').innerHTML = StructJS.Template.example_user(users);
+
+			var increment = 0;
+			StructJS.Worker(function (worker) {
+
+				document.getElementById('worker').innerHTML += StructJS.Template.example_job({ increment: increment });
+
+				if(increment < 10)
+					worker.next();
+
+				increment++;
+			});
+
 		})
 
 	</script>
 
-	<script id="template_example_user" type="text/html">
+	<script id="example_user" type="text/html">
 		<li>
-			{{ name }}
+			#{{ %INCREMENT% }} {{ name }}
+		</li>
+	</script>
+	<script id="example_job" type="text/html">
+		<li>
+			Loop {{ increment }}
 		</li>
 	</script>
 </head>
@@ -117,5 +145,10 @@
 	<ul id="users">
 
 	</ul>
+
+	<ul id="worker">
+
+	</ul>
+
 </body>
 </html>

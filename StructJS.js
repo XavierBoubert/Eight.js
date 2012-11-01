@@ -32,6 +32,7 @@
 		}
 	}
 
+
 	var namespaceDefine = function(name, objects, parentNamespace) {
 		if(isEmpty(parentNamespace)) {
 			parentNamespace = window;
@@ -113,7 +114,6 @@
 		};
 
 		this.Class = {
-
 			define: function(init, publicObjects, staticObjects) {
 				return classDefine(init, publicObjects, staticObjects);
 			},
@@ -149,24 +149,43 @@
 		};
 
 		this.Promise = function(job) {
-			var
-				c = function() {},
-				e = function() {},
-				p = function() {};
+			var thenTable = [];
 
-			var promise = {
-				then: function(complete, error, progress) {
-					c = complete || function() { };
-					e = error || function() { };
-					p = progress || function() { };
-				}
+			var promise = function () {
+
+				var promiseSelf = this;
+
+				this.then = function(complete, error, progress) {
+					thenTable.push({
+						complete: complete || function() { },
+						error: error || function() { },
+						progress: progress || function() { }
+					});
+
+					return promiseSelf;
+				};
 			};
 
-			setTimeout(function() {
-				job(c, e, p);
-			}, 1);
+			that.Worker(function (worker) {
 
-			return promise;
+				if(thenTable.length > 0) {
+					job(
+						thenTable[0].complete,
+						thenTable[0].error,
+						thenTable[0].progress
+					);
+
+					thenTable.splice(0, 1);
+				}
+
+				console.log(thenTable);
+
+				if(thenTable.length > 0) {
+					worker.next();
+				}
+			});
+
+			return new promise();
 		};
 
 		this.Template = {
@@ -216,6 +235,24 @@
 					trash[i].parentNode.removeChild(trash[i]);
 				}
 			}
+		};
+
+		this.Worker = function (job) {
+
+			var worker = function() {
+
+				var workerSelf = this;
+
+				this.next = function() {
+					setTimeout(function() {
+						job(workerSelf);
+					}, 0.01);
+				};
+			}
+
+			setTimeout(function() {
+				job(new worker());
+			}, 0.01);
 		};
 
 	};
