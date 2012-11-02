@@ -1,0 +1,33 @@
+EIGHT.js:
+
+  Base:
+    ☐ Fix Promise() to make more then()
+    ☐ Add events
+    ☐ Add errors, warnings & logs
+    ☐ Doc
+    ☐ Examples
+    ☐ Readme
+
+  UI:
+    ☐ Grid.define(parent)
+    ☐ Unit: {width: 0, height: 0, getCss()}
+    ☐ Subunit: {width: 0, height: 0, getCss()}
+    ☐ Animations: {define(), animate(), then()}
+    ☐ Doc
+    ☐ Examples
+    ☐ Readme
+
+  UI.Controls:
+    ☐ Scrolls
+    ☐ Doc
+    ☐ Examples
+    ☐ Readme
+
+  UI.Page:
+    ☐ define({title: '', dev: { showGrid: true}});
+    ☐ setTitle({animate: true})
+    ☐ AppBar ?
+    ☐ OptionsBar ?
+    ☐ Doc
+    ☐ Examples
+    ☐ Readme

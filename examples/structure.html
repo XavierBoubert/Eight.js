@@ -3,6 +3,7 @@
 <head>
 	<script type="text/javascript" src="../lib/Eight.js"></script>
 	<script>
+
 		$8.Namespace.define('Users', {
 
 			user: $8.Class.define(function(name) {
@@ -119,11 +120,27 @@
 
 				document.getElementById('worker').innerHTML += $8.Template.example_job({ increment: increment });
 
+				worker.progress(increment);
+
 				if(increment < 10)
 					worker.next();
+				else {
+					worker.complete('Done')
+				}
 
 				increment++;
-			});
+			})
+				.then(
+					function complete(value) {
+						console.log('Worker complete: ' + value);
+					},
+					function error(error) {
+						console.log('Worker error: ' + value);
+					},
+					function progress(value) {
+						console.log('Worker progress: ' + value);
+					}
+				);
 
 		})
 

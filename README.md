@@ -1,7 +1,7 @@
-StructJS
+Eight.js
 =======
 
-Light implementation of many features to structure JavaScript projects
+Parts implementation of the WinJS & WinRT (UI) from Windows 8.
 
 Namespaces
 --------
