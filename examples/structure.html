@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-	<script type="text/javascript" src="StructJS.js"></script>
+	<script type="text/javascript" src="../lib/Eight.js"></script>
 	<script>
-		StructJS.Namespace.define('Users', {
+		$8.Namespace.define('Users', {
 
-			user: StructJS.Class.define(function(name) {
+			user: $8.Class.define(function(name) {
 				this.name(name);
 			}, {
 				_name: '',
@@ -13,7 +13,7 @@
 					return this._name;
 				},
 
-				name: new StructJS.Property(
+				name: new $8.Property(
 					function get(self) {
 						return self._name;
 					},
@@ -29,7 +29,7 @@
 
 		});
 
-		StructJS.Namespace.define('Users.Groups', {
+		$8.Namespace.define('Users.Groups', {
 
 			group: function(name) {
 
@@ -37,7 +37,7 @@
 
 		});
 
-		StructJS.Namespace.defineInParent('Users.Groups', 'Search', {
+		$8.Namespace.defineInParent('Users.Groups', 'Search', {
 
 			query: function(query) {
 
@@ -45,7 +45,7 @@
 
 		});
 
-		Users.userAge = StructJS.Class.inherit(Users.user, function(name, age) {
+		Users.userAge = $8.Class.inherit(Users.user, function(name, age) {
 			Users.user.apply(this, [name]);
 
 			this._age = age;
@@ -69,7 +69,7 @@
 		var search = new Users.Groups.Search.query('Admin');
 
 		function add(a, b) {
-			return new StructJS.Promise(function(complete, error, progress) {
+			return new $8.Promise(function(complete, error, progress) {
 				progress('Start');
 
 				var sum = a + b;
@@ -111,13 +111,13 @@
 			{name: 'Michael'}
 		]
 
-		StructJS.Utilities.DOMReady(function() {
-			document.getElementById('users').innerHTML = StructJS.Template.example_user(users);
+		$8.Utilities.DOMReady(function() {
+			document.getElementById('users').innerHTML = $8.Template.example_user(users);
 
 			var increment = 0;
-			StructJS.Worker(function (worker) {
+			$8.Worker(function (worker) {
 
-				document.getElementById('worker').innerHTML += StructJS.Template.example_job({ increment: increment });
+				document.getElementById('worker').innerHTML += $8.Template.example_job({ increment: increment });
 
 				if(increment < 10)
 					worker.next();
