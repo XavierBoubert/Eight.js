@@ -7,9 +7,6 @@ EIGHT.js:
     ☐ Readme
 
   UI:
-    ☐ Grid.define(parent)
-    ☐ Unit: {width: 0, height: 0, getCss()}
-    ☐ Subunit: {width: 0, height: 0, getCss()}
     ☐ Animations: {define(), animate(), then()}
     ☐ Doc
     ☐ Examples

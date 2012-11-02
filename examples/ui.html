@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<link type="text/css" href="../lib/css/Eight.ui.css" rel="stylesheet" />
+
+	<script type="text/javascript" src="../lib/Eight.base.js"></script>
+	<script type="text/javascript" src="../lib/Eight.ui.js"></script>
+	<script>
+
+		$8.Utilities.DOMReady(function() {
+
+			$8.UI.Grid.define(document.body);
+
+			$8.UI.Animations.define('move_to_right', function(animation, detail) {
+
+				detail.el.DOM.style.left = detail.
+
+			});
+
+			$8.UI.Animations.animate('move_to_right', {
+				el: 'toto', // can be table
+				interval: 0.1,
+				from: 100,
+				to: 600,
+				increment: 1,
+				easing: $8.UI.Animations.Types.?
+			});
+
+		});
+
+
+	</script>
+</head>
+<body>
+
+	<div id="toto" style="background: red; position: asbolute; width: 100px; height: 200px; top: 100px; left: 250px;">
+
+</body>
+</html>
