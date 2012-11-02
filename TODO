@@ -2,8 +2,6 @@ EIGHT.js:
 
   Base:
     ☐ Fix Promise() to make more then()
-    ☐ Add events
-    ☐ Add errors, warnings & logs
     ☐ Doc
     ☐ Examples
     ☐ Readme
