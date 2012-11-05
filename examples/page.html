@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<link type="text/css" href="../lib/css/Eight.ui.css" rel="stylesheet" />
+	<link type="text/css" href="../lib/css/Eight.ui.controls.css" rel="stylesheet" />
+	<link type="text/css" href="../lib/css/Eight.ui.page.css" rel="stylesheet" />
+
+	<script type="text/javascript" src="../lib/Eight.base.js"></script>
+	<script type="text/javascript" src="../lib/Eight.ui.js"></script>
+	<script type="text/javascript" src="../lib/Eight.ui.controls.js"></script>
+	<script type="text/javascript" src="../lib/Eight.ui.page.js"></script>
+	<script>
+
+		$8.UI.Page.define('Example', {
+			showGrid: true,
+			title: 'Example',
+			cls: 'extra-class',
+			events: {
+				resize: function(e) {
+					window.console.log('page resized');
+				}
+			}
+		});
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

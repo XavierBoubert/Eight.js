@@ -113,12 +113,12 @@
 		]
 
 		$8.Utilities.DOMReady(function() {
-			document.getElementById('users').innerHTML = $8.Template.example_user(users);
+			document.getElementById('users').innerHTML = $8.Templates.example_user(users);
 
 			var increment = 0;
 			$8.Worker(function (worker) {
 
-				document.getElementById('worker').innerHTML += $8.Template.example_job({ increment: increment });
+				document.getElementById('worker').innerHTML += $8.Templates.example_job({ increment: increment });
 
 				worker.progress(increment);
 
