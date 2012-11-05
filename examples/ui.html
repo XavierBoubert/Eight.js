@@ -7,33 +7,39 @@
 	<script type="text/javascript" src="../lib/Eight.ui.js"></script>
 	<script>
 
+		$8.UI.Animations.define('move_to_right', {
+			duration: 5, // in sec
+			from: 100,
+			to: 600,
+			easing: $8.UI.Animations.Easing.easeOutElastic
+
+		}, function(animation, detail) {
+
+			A1 = detail;
+			detail.el.DOM.style.left = detail.current + 'px';
+
+		});
+
 		$8.Utilities.DOMReady(function() {
 
 			$8.UI.Grid.define(document.body);
 
-			$8.UI.Animations.define('move_to_right', function(animation, detail) {
-
-				detail.el.DOM.style.left = detail.
-
-			});
-
 			$8.UI.Animations.animate('move_to_right', {
-				el: 'toto', // can be table
-				interval: 0.1,
-				from: 100,
-				to: 600,
-				increment: 1,
-				easing: $8.UI.Animations.Types.?
+				el: ['toto', 'tata'], // can be table
+				// possible to change default config here
+				to: 700
+			}).then(function() {
+				console.log('Animation completed');
 			});
 
 		});
-
 
 	</script>
 </head>
 <body>
 
-	<div id="toto" style="background: red; position: asbolute; width: 100px; height: 200px; top: 100px; left: 250px;">
+	<div id="toto" style="background: red; position: absolute; width: 100px; height: 200px; top: 100px; left: 250px;"></div>
+	<div id="tata" style="background: red; position: absolute; width: 100px; height: 200px; top: 400px; left: 250px;"></div>
 
 </body>
 </html>

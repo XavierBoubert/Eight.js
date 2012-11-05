@@ -7,7 +7,7 @@ EIGHT.js:
     ☐ Readme
 
   UI:
-    ☐ Animations: {define(), animate(), then()}
+    ☐ Keyboard
     ☐ Doc
     ☐ Examples
     ☐ Readme
@@ -19,7 +19,7 @@ EIGHT.js:
     ☐ Readme
 
   UI.Page:
-    ☐ define({title: '', dev: { showGrid: true}});
+    ☐ define({title: '', dev: { showGrid: true }});
     ☐ setTitle({animate: true})
     ☐ AppBar ?
     ☐ OptionsBar ?
