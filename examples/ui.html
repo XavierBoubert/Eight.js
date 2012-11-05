@@ -14,10 +14,7 @@
 			easing: $8.UI.Animations.Easing.easeOutElastic
 
 		}, function(animation, detail) {
-
-			A1 = detail;
 			detail.el.DOM.style.left = detail.current + 'px';
-
 		});
 
 		$8.Utilities.DOMReady(function() {
@@ -30,6 +27,10 @@
 				to: 700
 			}).then(function() {
 				console.log('Animation completed');
+			});
+
+			$8.UI.Shortcuts.define(113, function(e) {
+				alert('F2');
 			});
 
 		});
