@@ -2,15 +2,20 @@
 <html dir="ltr" lang="en-US">
 <head>
 	<link type="text/css" href="../lib/css/Eight.ui.css" rel="stylesheet" />
+	<link type="text/css" href="../lib/css/Eight.ui.controls.css" rel="stylesheet" />
+	<style>
+		body { background: black; color: white; font-family: "Segoe UI", "Helvetica", "Arial"; }
+	</style>
 
 	<script type="text/javascript" src="../lib/Eight.base.js"></script>
 	<script type="text/javascript" src="../lib/Eight.ui.js"></script>
+	<script type="text/javascript" src="../lib/Eight.ui.controls.js"></script>
 	<script>
 
 		$8.UI.Animations.define('move_to_right', {
 			duration: 5, // in sec
-			from: 100,
-			to: 600,
+			from: 0,
+			to: 400,
 			easing: $8.UI.Animations.Easing.easeOutElastic
 
 		}, function(animation, detail) {
@@ -22,7 +27,7 @@
 			$8.UI.Grid.define(document.body);
 
 			$8.UI.Animations.animate('move_to_right', {
-				el: ['toto', 'tata'], // can be table
+				el: 'toto', // can be table
 				// possible to change default config here
 				to: 700
 			}).then(function() {
@@ -39,8 +44,13 @@
 </head>
 <body>
 
-	<div id="toto" style="background: red; position: absolute; width: 100px; height: 200px; top: 100px; left: 250px;"></div>
-	<div id="tata" style="background: red; position: absolute; width: 100px; height: 200px; top: 400px; left: 250px;"></div>
+	<div style="height: 100px; position: relative; margin-bottom: 20px;">
+		<div id="toto" style="background: red; position: absolute; width: 100px; height: 100px; top: 0; left: 0;"></div>
+	</div>
+
+	<div id="scrollContent" data-control="scroller" data-params="{width: 200, height: 100, orientation: 'vertical'}">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
+	</div>
 
 </body>
 </html>

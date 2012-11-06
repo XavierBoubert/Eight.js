@@ -12,15 +12,28 @@
 	<script>
 
 		$8.UI.Page.define('Example', {
-			showGrid: true,
 			title: 'Example',
 			cls: 'extra-class',
+
+			content: 'Hello',
+
+			showGrid: true,
+
+			parameters: {
+
+			},
+			appbar: {
+				visible: true
+			},
+
 			events: {
 				resize: function(e) {
 					window.console.log('page resized');
 				}
-			}
+			},
 		});
+
+
 
 	</script>
 </head>

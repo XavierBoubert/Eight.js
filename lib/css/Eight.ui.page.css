@@ -42,11 +42,16 @@ table {
 	border-spacing: 0;
 }
 
+.h8-page {
+	background: black;
+	color: white;
+	font-family: "Segoe UI", "Helvetica", "Arial";
+}
+
 .h8-page h1 {
 	margin: 40px 0 0 120px;
 	font-family: "Segoe UI Stylistic", "Segoe UI Light", "Segoe UI", "Helvetica", "Arial";
 	font-size: 60px;
-	color: white;
 	padding: 0;
 	font-weight: normal;
 	height: 70px;
@@ -54,8 +59,8 @@ table {
 }
 
 .h8-page-content {
-	background: #00adef;
 	position: absolute;
 	top: 140px;
 	left: 120px;
+	overflow: auto;
 }

@@ -18,8 +18,11 @@ EIGHT.js:
     ☐ Readme
 
   UI.Page:
-    ☐ define({title: '', dev: { showGrid: true }});
-    ☐ setTitle({animate: true})
+    ☐ Des templates de colonnes
+    ☐ Parametre vertical ou horizontal
+    ☐ Panel Parameters
+    ☐ Panel AppBar
+    ☐ title({animate: true})
     ☐ AppBar ?
     ☐ OptionsBar ?
     ☐ Doc
