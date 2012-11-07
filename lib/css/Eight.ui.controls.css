@@ -54,3 +54,33 @@
 	width: 6px;
 	height: 40px;
 }
+
+.h8-control-tile {
+	position: relative;
+}
+
+.h8-control-tile-container {
+	visibility: hidden;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background: #00aedf;
+}
+
+.h8-control-tile-picture {
+	position: absolute;
+}
+
+.h8-control-tile-content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #005a74;
+}
+
+.h8-control-tile-text {
+	padding: 10px;
+	color: white;
+}

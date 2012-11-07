@@ -26,15 +26,37 @@
 
 			},
 
-			content: 'Hello',
-
 			appbar: {
 				visible: true
 			},
 
+			content:
+				'<div style="float: left">' +
+					'<div id="maTile" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
+					'<div id="maTile2" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
+				'</div>' +
+				'<div style="float: left">' +
+					'<div id="maTile3" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
+					'<div id="maTile4" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
+				'</div>',
+
 			events: {
 				resize: function(e) {
 					window.console.log('page resized');
+				},
+				loaded: function(e) {
+					setTimeout(function() {
+						$8.UI.Controls.tile.show('maTile');
+					}, 250);
+					setTimeout(function() {
+						$8.UI.Controls.tile.show('maTile2');
+					}, 350);
+					setTimeout(function() {
+						$8.UI.Controls.tile.show('maTile3');
+					}, 450);
+					setTimeout(function() {
+						$8.UI.Controls.tile.show('maTile4');
+					}, 550);
 				}
 			},
 		});

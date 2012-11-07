@@ -12,6 +12,8 @@ EIGHT.js:
     ☐ Readme
 
   UI.Controls:
+    ☐ Tile
+    ☐ Popup
     ☐ Scroller
         fix scroll hidding
     ☐ Doc
@@ -22,7 +24,6 @@ EIGHT.js:
     ☐ Templates & columns
     ☐ Panel Parameters
     ☐ Panel AppBar
-    ☐ title({animate: true})
     ☐ AppBar ?
     ☐ OptionsBar ?
     ☐ Doc
