@@ -19,9 +19,7 @@ EIGHT.js:
     ☐ Readme
 
   UI.Page:
-    ☐ SplashScreen
-    ☐ Des templates de colonnes
-    ☐ Parametre vertical ou horizontal
+    ☐ Templates & columns
     ☐ Panel Parameters
     ☐ Panel AppBar
     ☐ title({animate: true})
