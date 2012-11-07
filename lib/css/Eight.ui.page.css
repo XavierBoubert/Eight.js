@@ -49,14 +49,21 @@ table {
 	font-family: "Segoe UI", "Helvetica", "Arial";
 }
 
-.h8-page h1 {
+.h8-title {
 	margin: 40px 0 0 120px;
+	position: relative;
+	height: 70px;
+}
+
+.h8-title h1 {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
 	font-family: "Segoe UI Stylistic", "Segoe UI Light", "Segoe UI", "Helvetica", "Arial";
 	font-size: 60px;
-	padding: 0;
 	font-weight: normal;
-	height: 70px;
-	overflow: hidden;
+	padding: 0;
 }
 
 .h8-page-content {
@@ -77,4 +84,5 @@ table {
 
 .h8-splashscreen img {
 	position: absolute;
+	visibility: hidden;
 }
