@@ -40,6 +40,14 @@
 
 		});
 
+		$8.UI.Controls.afterProcessAll(function() {
+			$8.UI.Controls.scroller.define('scrollContentH', {
+				width: 600,
+				height: 200,
+				orientation: 'horizontal'
+			});
+		});
+
 	</script>
 </head>
 <body>
@@ -48,8 +56,30 @@
 		<div id="toto" style="background: red; position: absolute; width: 100px; height: 100px; top: 0; left: 0;"></div>
 	</div>
 
-	<div id="scrollContent" data-control="scroller" data-params="{width: 200, height: 100, orientation: 'vertical'}">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
+	<div id="scrollContentV" data-control="scroller" data-params="{width: 600, height: 200, orientation: 'vertical'}" style="background: white; color: black; padding: 5px;">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
+		</p>
+	</div>
+
+	<div id="scrollContentH" style="background: white; color: black; padding: 5px; margin-top: 25px;">
+		<div style="width: 2000px; height: 200px">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
+			</p>
+		</div>
 	</div>
 
 </body>

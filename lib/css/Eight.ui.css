@@ -19,3 +19,12 @@ body.h8-grid,
 	background-size: 20px 20px;
 	background-position: -1px -1px;
 }
+
+.h8-unselectable {
+	user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+}

@@ -12,12 +12,14 @@ EIGHT.js:
     ☐ Readme
 
   UI.Controls:
-    ☐ Scrolls
+    ☐ Scroller
+        fix scroll hidding
     ☐ Doc
     ☐ Examples
     ☐ Readme
 
   UI.Page:
+    ☐ SplashScreen
     ☐ Des templates de colonnes
     ☐ Parametre vertical ou horizontal
     ☐ Panel Parameters
