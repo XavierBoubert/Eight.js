@@ -135,7 +135,8 @@ h2.h8-control-category-title a:hover {
 	position: absolute;
 }
 
-.h8-control-tile-content {
+.h8-control-tile-content,
+.h8-control-tile-nopicture-content {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -143,7 +144,18 @@ h2.h8-control-category-title a:hover {
 	background: #005a74;
 }
 
-.h8-control-tile-text {
+.h8-control-tile-nopicture-content {
+	background: none;
+}
+
+.h8-control-tile-text,
+.h8-control-tile-nopicture-text {
 	padding: 10px;
 	color: white;
+}
+
+.h8-control-tile-nopicture-text {
+	font-family: "Segoe UI Light", "Segoe UI", "Helvetica", "Arial";
+	font-size: 180%;
+	text-decoration: none;
 }
