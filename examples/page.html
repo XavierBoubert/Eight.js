@@ -9,74 +9,105 @@
 	<script type="text/javascript" src="../lib/Eight.ui.js"></script>
 	<script type="text/javascript" src="../lib/Eight.ui.controls.js"></script>
 	<script type="text/javascript" src="../lib/Eight.ui.page.js"></script>
-	<script>
 
-		$8.UI.Page.define('Example', {
-			title: 'Example',
-			cls: 'extra-class',
+	<style type="text/css">
+		.myPage { visibility: hidden; }
+	</style>
 
-			layout: 'hub', // hub, section, detail
-
-			//showGrid: true,
-
-			// splashscreen: {
-			// 	color: '#008a00',
-			// 	picture: 'images/logo.png'
-			// },
-
-			parameters: {
-
-			},
-
-			appbar: {
-				visible: true
-			},
-
-			items: [
-
-				'<div data-control="category" data-params="{title: \'Category 1\', link: \'ui.html\', visible: false}">' +
-
-						'<div style="float: left">' +
-							'<div id="maTile" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
-							'<div id="maTile2" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
-						'</div>' +
-
-				'</div>',
-
-				'<div data-control="category" data-params="{title: \'Category 2\', link: \'index.html\', visible: false}">' +
-
-						'<div style="float: left">' +
-							'<div id="maTile3" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
-							'<div id="maTile4" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
-						'</div>' +
-
-				'</div>',
-			],
-
-			events: {
-				resize: function(e) {
-					window.console.log('page resized');
-				},
-				loaded: function(e) {
-					// setTimeout(function() {
-					// 	$8.UI.Controls.tile.show('maTile');
-					// }, 250);
-					// setTimeout(function() {
-					// 	$8.UI.Controls.tile.show('maTile2');
-					// }, 350);
-					// setTimeout(function() {
-					// 	$8.UI.Controls.tile.show('maTile3');
-					// }, 450);
-					// setTimeout(function() {
-					// 	$8.UI.Controls.tile.show('maTile4');
-					// }, 550);
-				}
-			},
-		});
-
-	</script>
 </head>
 <body>
+
+	<div class="myPage" data-control="page" data-params="{title: 'Example', layout: 'hub', animElements: ['category', 'tile']}">
+
+		<div data-control="category" data-params="{title: 'Category 1', link: '#', visible: false}">
+
+			<div data-control="column" data-params="{width: 540+270+180}">
+
+				<div style="float: left; width: 540px;">
+
+					<div data-control="tile" data-params="{width: 530, height: 350, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+				</div>
+
+				<div style="float: left; width: 270px;">
+
+					<div data-control="tile" data-params="{width: 260, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+					<div data-control="tile" data-params="{width: 260, height: 350, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+				</div>
+
+				<div style="float: left; width: 180px;">
+
+					<div data-control="tile" data-params="{width: 170, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
+						A tile without picture
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div data-control="category" data-params="{title: 'Category 2', link: '#', visible: false}">
+
+			<div data-control="column" data-params="{width: 540+270+180}">
+
+				<div style="float: left; width: 540px;">
+
+					<div data-control="tile" data-params="{width: 530, height: 350, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+				</div>
+
+				<div style="float: left; width: 270px;">
+
+					<div data-control="tile" data-params="{width: 260, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+					<div data-control="tile" data-params="{width: 260, height: 350, picture: 'images/logo.png', visible: false, link: '#'}">
+						My awesome text
+					</div>
+
+				</div>
+
+				<div style="float: left; width: 180px;">
+
+					<div data-control="tile" data-params="{width: 170, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
+						A tile without picture
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
 
 </body>
 </html>

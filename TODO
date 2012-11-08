@@ -1,5 +1,10 @@
 EIGHT.js:
 
+  Bugs:
+    ☐ Page title height
+    ☐ Scroller
+        fix scroll hidding
+
   Base:
     ☐ Fix Promise() to make more then()
     ☐ Doc
@@ -14,8 +19,7 @@ EIGHT.js:
   UI.Controls:
     ☐ Tile
     ☐ Popup
-    ☐ Scroller
-        fix scroll hidding
+    ☐ Toast
     ☐ Doc
     ☐ Examples
     ☐ Readme

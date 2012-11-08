@@ -67,7 +67,7 @@
 .h8-control-category {
 	position: relative;
 	float: left;
-	margin-right: 80px;
+	margin-right: 40px;
 }
 
 h2.h8-control-category-title {
@@ -99,20 +99,36 @@ h2.h8-control-category-title a:hover {
 
 
 /*
+ * COLUMNS
+ */
+
+.h8-control-column {
+	position: relative;
+	float: left;
+	margin-right: 30px;
+}
+
+
+/*
  * TILE
  */
 
 .h8-control-tile {
 	position: relative;
+	margin: 0 10px 10px 0;
 }
 
-.h8-control-tile-container {
+.h8-control-tile-container,
+.h8-control-tile-container:hover,
+.h8-control-tile-container:visited {
+	display: block;
 	visibility: hidden;
 	position: relative;
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
 	background: #00aedf;
+	text-decoration: none;
 }
 
 .h8-control-tile-picture {
