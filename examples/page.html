@@ -15,12 +15,14 @@
 			title: 'Example',
 			cls: 'extra-class',
 
+			layout: 'hub', // hub, section, detail
+
 			//showGrid: true,
 
-			// splashscreen: {
-			// 	color: '#008a00',
-			// 	picture: 'images/logo.png'
-			// },
+			splashscreen: {
+				color: '#008a00',
+				picture: 'images/logo.png'
+			},
 
 			parameters: {
 
@@ -30,15 +32,18 @@
 				visible: true
 			},
 
-			content:
+			items: [
+
 				'<div style="float: left">' +
 					'<div id="maTile" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
 					'<div id="maTile2" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
-				'</div>' +
+				'</div>',
+
 				'<div style="float: left">' +
 					'<div id="maTile3" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
 					'<div id="maTile4" class="tile-extra-class" data-control="tile" data-params="{width: 400, height: 200, picture: \'images/logo.png\', visible: false}">Mon super texte</div>' +
-				'</div>',
+				'</div>'
+			],
 
 			events: {
 				resize: function(e) {
