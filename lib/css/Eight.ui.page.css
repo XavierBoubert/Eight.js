@@ -39,16 +39,33 @@
 	overflow: hidden;
 }
 
-.h8-splashscreen {
+/*
+ * POPUP
+ */
+
+.h8-popup {
+	display: none;
 	z-index: 99999;
-	width: 100%;
-	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, .8);
 }
 
-.h8-splashscreen img {
+.h8-popup-container {
+	background: #00aedf;
 	position: absolute;
-	visibility: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.h8-popup-content {
+	margin: 0 auto;
+	width: 600px;
+	color: #fff;
+	padding: 10px;
 }

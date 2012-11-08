@@ -10,6 +10,20 @@
 	<script type="text/javascript" src="../lib/Eight.ui.controls.js"></script>
 	<script type="text/javascript" src="../lib/Eight.ui.page.js"></script>
 
+	<script type="text/javascript">
+		var UI = $8.UI,
+			Controls = UI.Controls
+			Page = Controls.page;
+
+		UI.Shortcuts.verbose();
+
+		// [F2]
+		UI.Shortcuts.define(113, function() {
+			Page.popup('<p>Hello,<br /><br />This is my popup function</p>');
+		});
+
+	</script>
+
 	<style type="text/css">
 		.myPage { visibility: hidden; }
 	</style>
@@ -26,7 +40,7 @@
 				<div style="float: left; width: 540px;">
 
 					<div data-control="tile" data-params="{width: 530, height: 350, picture: 'images/logo.png', pictureHover: 'images/logo-hover.png', visible: false, link: '#'}">
-						My awesome text
+						A responsive tile
 					</div>
 
 					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: 'images/logo.png', visible: false, link: '#'}">
