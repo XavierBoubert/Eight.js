@@ -49,6 +49,14 @@ table {
 	font-family: "Segoe UI", "Helvetica", "Arial";
 }
 
+.h8-page a,
+.h8-page a:hover,
+.h8-page a:visited {
+	color: white;
+	font-family: "Segoe UI", "Helvetica", "Arial";
+	text-decoration: underline;
+}
+
 .h8-title {
 	margin: 40px 0 0 120px;
 	position: relative;

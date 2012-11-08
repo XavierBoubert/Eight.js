@@ -1,3 +1,7 @@
+/*
+ * SCROLLER
+ */
+
 .h8-control-scroller {
 	overflow: hidden;
 	position: relative;
@@ -54,6 +58,49 @@
 	width: 6px;
 	height: 40px;
 }
+
+
+/*
+ * CATEGORY
+ */
+
+.h8-control-category {
+	position: relative;
+	float: left;
+	margin-right: 80px;
+}
+
+h2.h8-control-category-title {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: "Segoe UI Stylistic", "Segoe UI Light", "Segoe UI", "Helvetica", "Arial";
+	font-size: 30px;
+	font-weight: normal;
+}
+
+h2.h8-control-category-title a,
+h2.h8-control-category-title a:hover,
+h2.h8-control-category-title a:visited {
+	font-family: "Segoe UI Stylistic", "Segoe UI Light", "Segoe UI", "Helvetica", "Arial";
+	font-size: 30px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+h2.h8-control-category-title a:hover {
+	opacity: .8;
+}
+
+.h8-control-category-content {
+	margin-top: 60px;
+}
+
+
+/*
+ * TILE
+ */
 
 .h8-control-tile {
 	position: relative;
