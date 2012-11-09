@@ -20,6 +20,10 @@ EIGHT.js:
     ☐ Readme
 
   UI.Controls:
+    ☐ input style
+    ☐ textarea style
+    ☐ button style
+    ☐ Search input
     ☐ In constructor, add argument: control (this)
     ☐ Doc
     ☐ Examples
@@ -27,7 +31,6 @@ EIGHT.js:
 
   UI.Page:
     ☐ Can just animate the main scroller
-    ☐ Panel Parameters
     ☐ Doc
     ☐ Examples
     ☐ Readme

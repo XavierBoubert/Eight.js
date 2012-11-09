@@ -166,6 +166,7 @@ h2.h8-control-category-title a:hover {
  */
 
 .h8-control-appbar {
+	z-index: 99989;
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -207,4 +208,40 @@ h2.h8-control-category-title a:hover {
 .h8-control-command-content {
 	color: white;
 	font-size: 90%;
+}
+
+
+/*
+ * PARAMETERS
+ */
+
+.h8-control-parameters {
+	z-index: 99988;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+	height: 100%;
+	overflow: hidden;
+}
+
+.h8-control-parameters-container {
+	position: absolute;
+	top: 0;
+	right: -345px;
+	width: 345px;
+	height: 100%;
+	background: #22c4f3;
+	color: white;
+	overflow: hidden;
+}
+
+.h8-control-parameters-container h3 {
+	font-size: 30px;
+    height: 35px;
+    margin-bottom: 15px;
+}
+
+.h8-control-parameters-content {
+	padding: 20px;
 }
