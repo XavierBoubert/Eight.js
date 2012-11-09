@@ -47,6 +47,10 @@ table {
 	border-spacing: 0;
 }
 
+.not-visible {
+	visibility: hidden;
+}
+
 .h8-clear {
 	clear: both;
 }
