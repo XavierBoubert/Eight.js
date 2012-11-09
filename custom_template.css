@@ -1,0 +1,52 @@
+body {
+	background: black;
+	color: white;
+}
+
+.h8-page a,
+.h8-page a:hover,
+.h8-page a:visited {
+	color: white;
+}
+
+.h8-popup-container {
+	background: #00aedf;
+	color: #fff;
+}
+
+.h8-notification {
+	background: #00aedf;
+	color: #fff;
+}
+
+.h8-control-scroller-vertical-ticker,
+.h8-control-scroller-horizontal-ticker {
+	background: rgba(85, 85, 85, .6);
+}
+
+.h8-control-tile-container,
+.h8-control-tile-container:hover,
+.h8-control-tile-container:visited {
+	background: #00aedf;
+}
+
+.h8-control-tile-content {
+	background: #005a74;
+}
+
+.h8-control-tile-text,
+.h8-control-tile-nopicture-text {
+	color: white;
+}
+
+.h8-control-appbar-container {
+	background: #005a74;
+}
+
+.h8-control-command-content {
+	color: white;
+}
+
+.h8-control-parameters-container {
+	background: #22c4f3;
+}
