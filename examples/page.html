@@ -15,11 +15,16 @@
 			Controls = UI.Controls
 			Page = Controls.page;
 
-		UI.Shortcuts.verbose();
-
 		// [F2]
 		UI.Shortcuts.define(113, function() {
 			Page.popup('<p>Hello,<br /><br />This is my popup function</p>');
+		});
+
+		// [F4]
+		UI.Shortcuts.define(115, function() {
+			Page.notification('Hello,<br /><br />This is my notification function', 'images/logo.png', function() {
+				alert('Notification click');
+			});
 		});
 
 	</script>

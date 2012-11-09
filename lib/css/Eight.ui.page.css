@@ -39,6 +39,7 @@
 	overflow: hidden;
 }
 
+
 /*
  * POPUP
  */
@@ -68,4 +69,48 @@
 	width: 600px;
 	color: #fff;
 	padding: 10px;
+}
+
+
+/*
+ * NOTIFICATION
+ */
+
+.h8-notification {
+	display: none;
+	z-index: 99998;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 385px;
+	height: 90px;
+	background: #00aedf;
+	cursor: pointer;
+}
+
+.h8-notification-picture {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90px;
+	height: 90px;
+}
+
+.h8-notification-container {
+	position: absolute;
+	top: 0;
+	left: 90px;
+	width: 295px;
+	height: 90px;
+	overflow: hidden;
+}
+
+.h8-notification-container-nopicture {
+	left: 0;
+	width: 385px;
+}
+
+.h8-notification-content {
+	padding: 10px;
+	color: #fff;
 }

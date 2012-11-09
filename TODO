@@ -4,9 +4,10 @@ EIGHT.js:
     ☐ Compatibility all browsers
     ☐ Scroller
         fix scroll hidding
+    ☐ Fix Promise() to make more then()
 
   Base:
-    ☐ Fix Promise() to make more then()
+    ☐ Binding
     ☐ Doc
     ☐ Examples
     ☐ Readme
@@ -17,14 +18,13 @@ EIGHT.js:
     ☐ Readme
 
   UI.Controls:
-    ☐ Popup
-    ☐ Toast
+    ☐ Better define() function
     ☐ Doc
     ☐ Examples
     ☐ Readme
 
   UI.Page:
-    ☐ Templates & columns
+    ☐ Can just animate the main scroller
     ☐ Panel Parameters
     ☐ Panel AppBar
     ☐ AppBar ?
