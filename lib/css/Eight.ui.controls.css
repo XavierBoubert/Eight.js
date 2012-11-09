@@ -159,3 +159,52 @@ h2.h8-control-category-title a:hover {
 	font-size: 180%;
 	text-decoration: none;
 }
+
+
+/*
+ * APPBAR
+ */
+
+.h8-control-appbar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	overflow: hidden;
+}
+
+.h8-control-appbar-container {
+	position: absolute;
+	left: 0;
+	bottom: -100px;
+	width: 100%;
+	height: 100px;
+	background: #005a74;
+	color: white;
+	overflow: hidden;
+}
+
+
+/*
+ * COMMAND
+ */
+
+.h8-control-command {
+	float: left;
+	width: 110px;
+	height: 80px;
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.h8-control-command-picture {
+	width: 40px;
+	height: 40px;
+}
+
+.h8-control-command-content {
+	color: white;
+	font-size: 90%;
+}

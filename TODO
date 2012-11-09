@@ -1,5 +1,7 @@
 EIGHT.js:
 
+    ☐ Make a template css
+
   Bugs:
     ☐ Compatibility all browsers
     ☐ Scroller
@@ -18,6 +20,7 @@ EIGHT.js:
     ☐ Readme
 
   UI.Controls:
+    ☐ In constructor, add argument: control (this)
     ☐ Doc
     ☐ Examples
     ☐ Readme
@@ -25,9 +28,6 @@ EIGHT.js:
   UI.Page:
     ☐ Can just animate the main scroller
     ☐ Panel Parameters
-    ☐ Panel AppBar
-    ☐ AppBar ?
-    ☐ OptionsBar ?
     ☐ Doc
     ☐ Examples
     ☐ Readme

@@ -15,16 +15,26 @@
 			Controls = UI.Controls
 			Page = Controls.page;
 
+
+
+		function showPopup() {
+			Page.popup('<p>Hello,<br /><br />This is my popup function</p>');
+		}
+
 		// [F2]
 		UI.Shortcuts.define(113, function() {
-			Page.popup('<p>Hello,<br /><br />This is my popup function</p>');
+			showPopup();
 		});
 
-		// [F4]
-		UI.Shortcuts.define(115, function() {
+		function showNotification() {
 			Page.notification('Hello,<br /><br />This is my notification function', 'images/logo.png', function() {
 				alert('Notification click');
 			});
+		}
+
+		// [F4]
+		UI.Shortcuts.define(115, function() {
+			showNotification();
 		});
 
 	</script>
@@ -123,6 +133,14 @@
 				</div>
 
 			</div>
+
+		</div>
+
+		<div data-control="appbar">
+
+			<div data-control="command" data-params="{picture: 'images/command-popup.png', action: showPopup}">show popup (F2)</div>
+
+			<div data-control="command" data-params="{picture: 'images/command-notification.png', action: showNotification}">show notification (F4)</div>
 
 		</div>
 
