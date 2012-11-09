@@ -3,6 +3,10 @@ body {
 	color: white;
 }
 
+.h8-splashscreen {
+	background: black;
+}
+
 .h8-page a,
 .h8-page a:hover,
 .h8-page a:visited {

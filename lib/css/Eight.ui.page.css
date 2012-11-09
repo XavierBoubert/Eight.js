@@ -49,7 +49,7 @@ body {
 
 .h8-popup {
 	display: none;
-	z-index: 99999;
+	z-index: 99998;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -81,7 +81,7 @@ body {
 
 .h8-notification {
 	display: none;
-	z-index: 99998;
+	z-index: 99997;
 	position: absolute;
 	top: 20px;
 	right: 20px;
