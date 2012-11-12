@@ -39,7 +39,7 @@
 .h8-control-scroller-horizontal-ticker {
 	cursor: pointer;
 	position: absolute;
-	background: rgba(85, 85, 85, .6);
+	background: rgba(85, 85, 85, .9);
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
 	border-radius: 7px;
@@ -120,7 +120,10 @@ h2.h8-control-category-title a:hover {
 
 .h8-control-tile-container,
 .h8-control-tile-container:hover,
-.h8-control-tile-container:visited {
+.h8-control-tile-container:visited,
+.h8-page a.h8-control-tile-container,
+.h8-page a.h8-control-tile-container:hover,
+.h8-page a.h8-control-tile-container:visited {
 	display: block;
 	visibility: hidden;
 	position: relative;

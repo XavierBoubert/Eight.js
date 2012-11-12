@@ -38,8 +38,16 @@ body {
 	position: absolute;
 	top: 140px;
 	left: 0;
-	padding-left: 120px;
 	overflow: hidden;
+}
+
+
+/*
+ * SCROLLER
+ */
+
+.h8-page-scroller-content {
+	padding-left: 120px;
 }
 
 
