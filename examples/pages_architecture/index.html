@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<link type="text/css" href="../../lib/css/Eight.ui.css" rel="stylesheet" />
+	<link type="text/css" href="../../lib/css/Eight.ui.controls.css" rel="stylesheet" />
+	<link type="text/css" href="../../lib/css/Eight.ui.page.css" rel="stylesheet" />
+
+	<script type="text/javascript" src="../../lib/Eight.base.js"></script>
+	<script type="text/javascript" src="../../lib/Eight.ui.js"></script>
+	<script type="text/javascript" src="../../lib/Eight.ui.controls.js"></script>
+	<script type="text/javascript" src="../../lib/Eight.ui.page.js"></script>
+
+	<script type="text/javascript">
+		var UI = $8.UI,
+			Controls = UI.Controls
+			Page = Controls.page;
+
+		function showPopup() {
+			Page.popup('<p>Hello,<br /><br />This is my popup function</p>');
+		}
+
+		UI.Shortcuts.verbose();
+
+		// [p]
+		UI.Shortcuts.define(80, function() {
+			showPopup();
+		});
+
+		function showNotification() {
+			Page.notification('Hello,<br /><br />This is my notification function', '../images/logo.png', function() {
+				alert('Notification click');
+			});
+		}
+
+		// [n]
+		UI.Shortcuts.define(78, function() {
+			showNotification();
+		});
+
+	</script>
+
+</head>
+<body>
+
+	<div class="not-visible" data-control="page" data-params="{title: 'People', layout: 'hub', animElements: ['category', 'tile']}">
+
+		<div data-control="category" data-params="{title: 'Family', link: 'section.html', visible: false}">
+
+			<div data-control="column" data-params="{width: 540+270+180}">
+
+				<div style="float: left; width: 540px;">
+
+					<div data-control="tile" data-params="{width: 530, height: 350, picture: '../images/person1.png', visible: false, link: 'detail.html'}">
+						John Smith
+					</div>
+
+					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: '../images/person2.png', visible: false, link: 'detail.html'}">
+						Eva Smith
+					</div>
+
+					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: '../images/person3.png', visible: false, link: 'detail.html'}">
+						Andrea Smith
+					</div>
+
+				</div>
+
+				<div style="float: left; width: 270px;">
+
+					<div data-control="tile" data-params="{width: 260, height: 170, picture: '../images/person4.png', visible: false, link: 'detail.html'}">
+						Yvonne Smith
+					</div>
+
+					<div data-control="tile" data-params="{width: 260, height: 350, picture: '../images/person5.png', visible: false, link: 'detail.html'}">
+						Kassy Smith
+					</div>
+
+				</div>
+
+				<div style="float: left; width: 180px;">
+
+					<div data-control="tile" data-params="{width: 170, height: 170, visible: false, link: 'section.html'}">
+						All my family
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div data-control="category" data-params="{title: 'Colleagues', link: 'section.html', visible: false}">
+
+			<div data-control="column" data-params="{width: 540+270+180}">
+
+				<div style="float: left; width: 540px;">
+
+					<div data-control="tile" data-params="{width: 530, height: 350, picture: '../images/person6.png', visible: false, link: 'detail.html'}">
+						Katty Taylor
+					</div>
+
+					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: '../images/person7.png', visible: false, link: 'detail.html'}">
+						Zoe Finch
+					</div>
+
+					<div style="float: left;" data-control="tile" data-params="{width: 260, height: 170, picture: '../images/person8.png', visible: false, link: 'detail.html'}">
+						Paul Gate
+					</div>
+
+				</div>
+
+				<div style="float: left; width: 270px;">
+
+					<div data-control="tile" data-params="{width: 260, height: 170, picture: '../images/person9.png', visible: false, link: 'detail.html'}">
+						Samuel Carter
+					</div>
+
+					<div data-control="tile" data-params="{width: 260, height: 350, picture: '../images/person10.png', visible: false, link: 'detail.html'}">
+						Jackson Oneil
+					</div>
+
+				</div>
+
+				<div style="float: left; width: 180px;">
+
+					<div data-control="tile" data-params="{width: 170, height: 170, visible: false, link: 'section.html'}">
+						All my colleagues
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div data-control="appbar">
+
+			<div data-control="command" data-params="{picture: '../images/command-popup.png', action: showPopup}">show popup (p)</div>
+
+			<div data-control="command" data-params="{picture: '../images/command-notification.png', action: showNotification}">show notification (n)</div>
+
+		</div>
+
+		<div data-control="parameters" data-params="{title: 'People'}">
+
+			My parameters bar
+
+		</div>
+
+	</div>
+
+	<div class="h8-splashscreen" data-control="splashscreen"></div>
+
+</body>
+</html>
