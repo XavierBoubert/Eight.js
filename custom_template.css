@@ -25,6 +25,7 @@ body {
 
 .h8-control-scroller-vertical-ticker,
 .h8-control-scroller-horizontal-ticker {
+	background: rgb(85, 85, 85);
 	background: rgba(85, 85, 85, .6);
 }
 

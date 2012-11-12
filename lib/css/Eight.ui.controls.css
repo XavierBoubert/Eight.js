@@ -39,6 +39,7 @@
 .h8-control-scroller-horizontal-ticker {
 	cursor: pointer;
 	position: absolute;
+	background: rgb(85, 85, 85);
 	background: rgba(85, 85, 85, .9);
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;

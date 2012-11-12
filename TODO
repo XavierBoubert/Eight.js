@@ -2,6 +2,7 @@ EIGHT.js:
 
   Bugs:
     ☐ Compatibility all browsers
+    ☐ Add transparency to IE
     ☐ Scroller
         fix scroll hidding
     ☐ Fix Promise() to make more then()
