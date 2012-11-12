@@ -90,8 +90,12 @@ h2.h8-control-category-title a:visited {
 	text-decoration: none;
 }
 
-h2.h8-control-category-title a:hover {
-	opacity: .8;
+h2.h8-control-category-title a {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
 }
 
 .h8-control-category-content {

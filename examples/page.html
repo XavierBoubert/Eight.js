@@ -19,8 +19,10 @@
 			Page.popup('<p>Hello,<br /><br />This is my popup function</p>');
 		}
 
-		// [F2]
-		UI.Shortcuts.define(113, function() {
+		UI.Shortcuts.verbose();
+
+		// [p]
+		UI.Shortcuts.define(80, function() {
 			showPopup();
 		});
 
@@ -30,8 +32,8 @@
 			});
 		}
 
-		// [F4]
-		UI.Shortcuts.define(115, function() {
+		// [n]
+		UI.Shortcuts.define(78, function() {
 			showNotification();
 		});
 
@@ -132,9 +134,9 @@
 
 		<div data-control="appbar">
 
-			<div data-control="command" data-params="{picture: 'images/command-popup.png', action: showPopup}">show popup (F2)</div>
+			<div data-control="command" data-params="{picture: 'images/command-popup.png', action: showPopup}">show popup (p)</div>
 
-			<div data-control="command" data-params="{picture: 'images/command-notification.png', action: showNotification}">show notification (F4)</div>
+			<div data-control="command" data-params="{picture: 'images/command-notification.png', action: showNotification}">show notification (n)</div>
 
 		</div>
 
