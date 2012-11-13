@@ -1,3 +1,11 @@
+/*
+ * This file is part of the Eight.js library.
+ *
+ * (c) 2012 Xavier Boubert
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 (function(window) {
 	'use strict';
 
@@ -1260,11 +1268,20 @@
 		'</div>'
 	);
 
+	$8.UI.Animations.define('h8_control_scroller_show', { duration: 1, from: 100, to: 0, easing: $8.UI.Animations.Easing.easeOutQuad },
+		function(animation, detail) {
+			detail.el.style('left', detail.current + 'px')
+				.style('opacity', Math.max(0, detail.percent / 100))
+				.style('visibility', 'visible');
+		}
+	);
+
 	$8.UI.Controls.register('scroller',
 
 		// Params
 		{
 			orientation: 'vertical', // vertical, horizontal
+			visible: true,
 			hiddenScrolls: true,
 			scrollspeed: 10,
 			increment: 1
@@ -1292,10 +1309,15 @@
 
 			el.html(html);
 
-			var elHorizontal = $8.UI.el(id + '_horizontal'),
+			var elContent = $8.UI.el(id + '_content'),
+				elHorizontal = $8.UI.el(id + '_horizontal'),
 				elVertical = $8.UI.el(id + '_vertical'),
 				elHorizontalTicker = $8.UI.el(id + '_horizontal_ticker'),
 				elVerticalTicker = $8.UI.el(id + '_vertical_ticker');
+
+			if(!params.visible) {
+				elContent.style('visibility', 'hidden');
+			}
 
 			$8.Utilities.addEvent(window.document, 'mousemove', function(eventMouse) {
 				if(verticalAction.active) {
@@ -1467,6 +1489,22 @@
 
 					$8.UI.Controls.scroller.position(el, left);
 				}
+			},
+
+			show: function(el, timeout) {
+				el = $8.UI.el(el);
+				timeout = timeout || 0;
+
+				var elContent = $8.UI.el(el.DOM.id + '_content');
+
+				if(!_isEmpty(el)) {
+					elContent.style('visibility', 'hidden')
+						.style('left', '100px');
+
+					setTimeout(function() {
+						$8.UI.Animations.animate('h8_control_scroller_show', { el: elContent });
+					}, timeout);
+				}
 			}
 		}
 	);
@@ -1499,14 +1537,20 @@
 		]
 	]);
 
-	$8.Templates.define('control_category_container',
+	$8.Templates.define([[
+		'control_category_container',
 		'<div id="{{ id }}_container" class="{{ baseCls }}-container">' +
-			'<h2 id="{{ id }}_title" class="{{ baseCls }}-title"><a href="{{ link }}">{{ title }}</a></h2>' +
+			'<h2 id="{{ id }}_title" class="{{ baseCls }}-title">' +
+				'{{ title }}' +
+			'</h2>' +
 			'<div id="{{ id }}_content" class="{{ baseCls }}-content">' +
 				'{{ content }}' +
 			'</div>' +
 		'</div>'
-	);
+	], [
+		'control_category_title_link',
+		'<a href="{{ link }}">{{ title }}</a>'
+	]]);
 
 	$8.UI.Controls.register('category',
 
@@ -1525,8 +1569,10 @@
 
 			html = $8.Templates.control_category_container({
 				id: id,
-				link: params.link,
-				title: params.title,
+				title: params.link !== '' ? $8.Templates.control_category_title_link({
+					link: params.link,
+					title: params.title
+				}) : params.title,
 				baseCls: params.baseCls,
 				content: content
 			});
@@ -1535,8 +1581,8 @@
 
 			var titleEl = $8.UI.el(id + '_title');
 
-			if(params.visible) {
-				titleEl.style('visibility', 'visible');
+			if(!params.visible) {
+				titleEl.style('visibility', 'hidden');
 			}
 		},
 		// Methods
@@ -1593,8 +1639,8 @@
 			params.width += 30;
 			$8.UI.Controls.setParams('column', el.DOM.id, params);
 
-			if(params.visible) {
-				el.style('visibility', 'visible');
+			if(!params.visible) {
+				el.style('visibility', 'hidden');
 			}
 		},
 		// Methods
@@ -1727,8 +1773,8 @@
 				}
 			}
 
-			if(params.visible) {
-				containerEl.style('visibility', 'visible');
+			if(!params.visible) {
+				containerEl.style('visibility', 'hidden');
 			}
 		},
 		// Methods
@@ -1738,14 +1784,14 @@
 					picEl = $8.UI.el(this),
 					params = $8.UI.Controls.getParams(id);
 
-				if(picEl.DOM.offsetHeight >= params.height) {
-					picEl.style('top', ((picEl.DOM.offsetHeight - params.height) / 2) + 'px');
+				if(picEl.DOM.offsetHeight > params.height) {
+					picEl.style('top', '-' + ((picEl.DOM.offsetHeight - params.height) / 2) + 'px');
 				}
 				else {
 					picEl.style('top', ((params.height - picEl.DOM.offsetHeight) / 2) + 'px');
 				}
-				if(picEl.DOM.offsetWidth >= params.width) {
-					picEl.style('left', ((picEl.DOM.offsetWidth - params.width) / 2) + 'px');
+				if(picEl.DOM.offsetWidth > params.width) {
+					picEl.style('left', '-' + ((picEl.DOM.offsetWidth - params.width) / 2) + 'px');
 				}
 				else {
 					picEl.style('left', ((params.width - picEl.DOM.offsetWidth) / 2) + 'px');
@@ -2137,11 +2183,13 @@
 		_inArray = $8.Utilities.inArray,
 		document = window.document;
 
-	$8.Templates.define('h8_page_container',
+	$8.Templates.define([[
+		'h8_page_container',
 		'<div id="{{ id }}_title" class="h8-title">' +
-			'<h1></h1>' +
+			'{{ backButton }}' +
+			'<h1 id="{{ id }}_title_h1"></h1>' +
 		'</div>' +
-		'<div id="{{ id }}_scroller" class="h8-page-content" data-control="scroller" data-params="{orientation: \'{{ content_orientation }}\', scrollspeed: 40}" style="width: {{ content_width }}px; height: {{ content_height }}px;">' +
+		'<div id="{{ id }}_scroller" class="h8-page-content" data-control="scroller" data-params="{orientation: \'{{ content_orientation }}\', visible: {{ scroller_visible }}, scrollspeed: 40}" style="width: {{ content_width }}px; height: {{ content_height }}px;">' +
 			'{{ content }}' +
 		'</div>' +
 		'{{ parameters }}' +
@@ -2158,7 +2206,10 @@
 				'<div  id="{{ idNotification }}_content" class="h8-notification-content"></div>' +
 			'</div>' +
 		'</div>'
-	);
+	], [
+		'h8_page_back_button',
+		'<div id="{{ id }}_back_button" class="h8-title-back-button"></div>'
+	]]);
 
 	$8.UI.Animations.define([
 		['h8_show_title_1', { duration: 1, from: 0, to: 60, easing: $8.UI.Animations.Easing.easeOutQuad },
@@ -2167,7 +2218,7 @@
 					.style('font-size', detail.current + 'px')
 					.style('visibility', 'visible');
 			}
-		], ['h8_show_title_2', { duration: 2, from: 300, to: 0, easing: $8.UI.Animations.Easing.easeOutCirc },
+		], ['h8_show_title_2', { duration: 2, from: 380, to: 80, easing: $8.UI.Animations.Easing.easeOutCirc },
 			function(animation, detail) {
 				detail.el.style('left', detail.current + 'px');
 			}
@@ -2197,6 +2248,8 @@
 			layout: 'hub',
 			orientation: 'horizontal',
 			title: '',
+			scrollerVisible: true,
+			backButton: true,
 			animElements: []
 		},
 
@@ -2254,7 +2307,11 @@
 
 			html += $8.Templates.h8_page_container({
 				id: id,
+				backButton: params.layout != 'hub' && params.backButton ? $8.Templates.h8_page_back_button({
+					id: id
+				}) : '',
 				content_orientation: params.orientation,
+				scroller_visible: params.scrollerVisible,
 				content_width: contentWidth,
 				content_height: contentHeight,
 				content: content,
@@ -2265,6 +2322,15 @@
 			});
 
 			el.html(html);
+
+			if(params.layout != 'hub') {
+				var backButtonEl = $8.UI.el(id + '_back_button');
+
+				$8.Utilities.addEvent(backButtonEl.DOM, 'click', function(e) {
+					window.history.back();
+				});
+			}
+
 
 			_els.popup = $8.UI.el(idPopup);
 			_els.notification = $8.UI.el(idNotification);
@@ -2387,17 +2453,16 @@
 
 			setTitle: function(el, title) {
 				el = $8.UI.el(el);
-				var titleEl = $8.UI.el(el.DOM.id + '_title');
+				var titleH1El = $8.UI.el(el.DOM.id + '_title_h1');
 
-				if(!_isEmpty(titleEl)) {
-					var h1 = $8.UI.el(titleEl.DOM.childNodes[0]);
-					h1.html('')
+				if(!_isEmpty(titleH1El)) {
+					titleH1El.html('')
 						.style('visibility', 'hidden')
-						.style('left', '300px')
+						.style('left', '380px')
 						.html(title);
 
-					$8.UI.Animations.animate('h8_show_title_1', { el: h1 });
-					$8.UI.Animations.animate('h8_show_title_2', { el: h1 });
+					$8.UI.Animations.animate('h8_show_title_1', { el: titleH1El });
+					$8.UI.Animations.animate('h8_show_title_2', { el: titleH1El });
 				}
 			},
 

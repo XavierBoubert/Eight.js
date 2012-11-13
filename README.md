@@ -3,6 +3,27 @@ Eight.js
 
 Parts implementation of the WinJS & WinRT (UI) from Windows 8.
 
+Live examples of the latest version here: http://xavierboubert.fr/eightjs/examples/
+
+
+Installation
+--------
+
+Copy the "lib" folder into your project and rename it to "eightjs".
+Add these lines into your <head> tags of your pages:
+
+`
+<link rel="stylesheet" type="text/css" href="eightjs/css/Eight.all.min.css" />
+<script type="text/javascript" src="eightjs/Eight.all.min.js"></script>
+`
+
+Creating page
+--------
+
+TODO
+
+
+
 Namespaces
 --------
 
