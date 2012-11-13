@@ -12,8 +12,8 @@ Installation
 Copy the "lib" folder into your project and rename it to "eightjs".
 Add these lines into your `<head>` tags of your pages:
 
-`<link rel="stylesheet" type="text/css" href="eightjs/css/Eight.all.min.css" />
-<script type="text/javascript" src="eightjs/Eight.all.min.js"></script>`
+	<link rel="stylesheet" type="text/css" href="eightjs/css/Eight.all.min.css" />
+	<script type="text/javascript" src="eightjs/Eight.all.min.js"></script>
 
 Creating page
 --------
