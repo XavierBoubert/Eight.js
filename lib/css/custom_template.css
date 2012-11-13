@@ -3,6 +3,22 @@ body {
 	color: white;
 }
 
+.h8-button {
+	background: #00aedf;
+	color: white;
+}
+
+.h8-button-light {
+	background: #22c4f3;
+	color: white;
+}
+
+.h8-field-text {
+	border: 1px solid #686868;
+	background: white;
+	color: #686868;
+}
+
 .h8-splashscreen {
 	background: black;
 }
@@ -31,7 +47,10 @@ body {
 
 .h8-control-tile-container,
 .h8-control-tile-container:hover,
-.h8-control-tile-container:visited {
+.h8-control-tile-container:visited,
+.h8-page a.h8-control-tile-container,
+.h8-page a.h8-control-tile-container:hover,
+.h8-page a.h8-control-tile-container:visited {
 	background: #00aedf;
 }
 
@@ -54,4 +73,8 @@ body {
 
 .h8-control-parameters-container {
 	background: #22c4f3;
+}
+
+.h8-splashscreen {
+	background: black;
 }

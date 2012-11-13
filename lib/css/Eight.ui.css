@@ -85,3 +85,23 @@ body.h8-grid,
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
 }
+
+.h8-button,
+.h8-button-light {
+	border: none;
+	background: #00aedf;
+	color: white;
+	padding: 5px;
+}
+
+.h8-button-light {
+	background: #22c4f3;
+	color: white;
+}
+
+.h8-field-text {
+	border: 1px solid #686868;
+	background: white;
+	color: #686868;
+	padding: 2px;
+}
