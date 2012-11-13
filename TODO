@@ -1,9 +1,8 @@
 EIGHT.js:
 
   Bugs:
-    ☐ Add back button before title ?
     ☐ Compatibility all browsers
-    ☐ Add transparency to IE
+        ☐ Add transparency to IE
     ☐ Scroller
         fix scroll hidding
     ☐ Fix Promise() to make more then()
@@ -22,7 +21,8 @@ EIGHT.js:
   UI.Controls:
     ☐ input style
     ☐ textarea style
-    ☐ button style
+    ☐ button styles
+        ☐ disabled
     ☐ Search input
     ☐ Doc
     ☐ Examples

@@ -19,14 +19,24 @@ body {
 }
 
 .h8-title {
-	margin: 40px 0 0 120px;
+	margin: 40px 0 0 40px; /* 120 */
 	position: relative;
 	height: 70px;
 }
 
-.h8-title h1 {
+.h8-title-back-button {
 	position: absolute;
 	left: 0;
+	bottom: 6px;
+	width: 40px;
+	height: 40px;
+	background: url('../images/back-button.png') no-repeat;
+	cursor: pointer
+}
+
+.h8-title h1 {
+	position: absolute;
+	left: 80px;
 	bottom: 0;
 	font-family: "Segoe UI Stylistic", "Segoe UI Light", "Segoe UI", "Helvetica", "Arial";
 	font-size: 60px;
