@@ -24,7 +24,7 @@
 
 		$8.Utilities.DOMReady(function() {
 
-			$8.UI.Grid.define(document.body);
+			//$8.UI.Grid.define(document.body);
 
 			$8.UI.Animations.animate('move_to_right', {
 				el: 'toto', // can be table
@@ -50,7 +50,7 @@
 
 	</script>
 </head>
-<body>
+<body style="padding: 20px;">
 
 	<div style="height: 100px; position: relative; margin-bottom: 20px;">
 		<div id="toto" style="background: red; position: absolute; width: 100px; height: 100px; top: 0; left: 0;"></div>
@@ -80,6 +80,26 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus scelerisque urna, at viverra turpis egestas at. In non ipsum lacus. Nulla in libero sed mauris vulputate sollicitudin. Donec ullamcorper quam justo. Proin sed leo magna. Maecenas at purus eu ipsum gravida porta. Suspendisse a leo sem, a pellentesque libero. Maecenas malesuada molestie tortor, in fringilla ligula fermentum sed. Sed ac eros ac nulla tristique tristique. Sed imperdiet ultrices urna, ac fringilla erat mattis a. Praesent tempor aliquet dolor ut dictum.
 			</p>
 		</div>
+	</div>
+
+	<div style="margin-top: 25px;">
+
+		<p style="margin-bottom: 15px;">
+			<input type="submit" class="h8-button" value="Hello" />
+
+			<input type="submit" class="h8-button-light" value="Hello" />
+
+			<input type="submit" class="h8-button h8-button-disabled" value="Hello" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<input type="text" class="h8-field-text" value="Hello" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<textarea class="h8-field-text">Hello</textarea>
+		</p>
+
 	</div>
 
 </body>

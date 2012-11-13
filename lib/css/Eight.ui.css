@@ -28,8 +28,6 @@ html {
 }
 body {
 	line-height: 1;
-	overflow: hidden;
-	height: 100%;
 }
 ol, ul {
 	list-style: none;
@@ -99,7 +97,13 @@ body.h8-grid,
 	color: white;
 }
 
+.h8-button-disabled {
+	background: #686868;
+	color: #aaa;
+}
+
 .h8-field-text {
+	font-family: "Segoe UI", "Helvetica", "Arial";
 	border: 1px solid #686868;
 	background: white;
 	color: #686868;

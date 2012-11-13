@@ -1,6 +1,8 @@
 body {
 	background: black;
 	color: white;
+	overflow: hidden;
+	height: 100%;
 }
 
 .h8-page {

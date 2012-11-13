@@ -13,6 +13,11 @@ body {
 	color: white;
 }
 
+.h8-button-disabled {
+	background: #686868;
+	color: #aaa;
+}
+
 .h8-field-text {
 	border: 1px solid #686868;
 	background: white;
