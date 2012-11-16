@@ -18,6 +18,7 @@ EIGHT.js:
     ☐ Readme
 
   UI.Controls:
+    ☐ Add pseudo winControl object in controls rendered
     ☐ Search input
     ☐ Doc
     ☐ Examples
