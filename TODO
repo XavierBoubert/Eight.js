@@ -26,6 +26,7 @@ EIGHT.js:
 
   UI.Page:
     ☐ Can just animate the main scroller
+    ☐ Responsive
     ☐ Doc
     ☐ Examples
     ☐ Readme
